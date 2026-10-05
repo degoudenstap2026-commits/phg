@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WebMaker Ultra</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="logo">Web<span>Maker</span><b> ULTRA</b></div>
+  <div class="pages">
+    <select id="pageSelect"></select><button id="addPage">＋ Pagina</button><button id="renamePage">✎</button><button id="removePage">🗑</button>
+  </div>
+  <div class="actions"><button id="undo">↶</button><button id="redo">↷</button><button id="preview">Voorbeeld</button><button id="save" class="primary">Opslaan</button><button id="export" class="primary">Exporteren</button></div>
+</header>
+
+<div class="layout">
+<aside class="left">
+  <h3>Toevoegen</h3>
+  <div class="grid">
+    <button data-add="hero">Hero</button><button data-add="heading">Titel</button><button data-add="text">Tekst</button>
+    <button data-add="image">Afbeelding</button><button data-add="button">Knop</button><button data-add="cards">Kaarten</button>
+    <button data-add="video">Video</button><button data-add="divider">Lijn</button><button data-add="spacer">Ruimte</button>
+    <button data-add="contact">Contact</button><button data-add="html">HTML</button><button data-add="footer">Footer</button>
+  </div>
+  <hr><h3>Website</h3>
+  <label>Naam<input id="siteName"></label>
+  <label>Lettertype<select id="fontFamily"><option>Inter</option><option>Arial</option><option>Georgia</option><option>Verdana</option><option>Trebuchet MS</option><option>Courier New</option></select></label>
+  <label>Primaire kleur<input id="primary" type="color"></label>
+  <label>Accentkleur<input id="accent" type="color"></label>
+  <label>Achtergrond<input id="siteBg" type="color"></label>
+  <label>Tekstkleur<input id="siteText" type="color"></label>
+</aside>
+
+<main class="center"><div id="canvas" class="canvas"></div></main>
+
+<aside class="right">
+  <h3>Alles aanpassen</h3>
+  <p id="none" class="muted">Klik een onderdeel aan.</p>
+  <div id="inspector" hidden>
+    <label>Breedte<input id="width" type="range" min="20" max="100" value="100"><span id="widthVal"></span></label>
+    <label>Hoogte<input id="height" type="number" min="0" placeholder="automatisch"></label>
+    <label>Padding<input id="padding" type="number" min="0" value="30"></label>
+    <label>Margin<input id="margin" type="number" min="0" value="0"></label>
+    <label>Lettergrootte<input id="fontSize" type="number" min="8" max="150"></label>
+    <label>Lettergewicht<select id="fontWeight"><option>400</option><option>500</option><option>600</option><option>700</option><option>800</option><option>900</option></select></label>
+    <label>Uitlijning<select id="align"><option>left</option><option>center</option><option>right</option></select></label>
+    <label>Achtergrond<input id="blockBg" type="color"></label>
+    <label>Tekstkleur<input id="blockColor" type="color"></label>
+    <label>Randkleur<input id="borderColor" type="color"></label>
+    <label>Randdikte<input id="borderWidth" type="number" min="0" max="20"></label>
+    <label>Hoekradius<input id="radius" type="number" min="0" max="100"></label>
+    <label>Schaduw<select id="shadow"><option value="none">Geen</option><option value="soft">Zacht</option><option value="strong">Sterk</option></select></label>
+    <hr>
+    <label>Inhoud<textarea id="content" rows="6"></textarea></label>
+    <label>Knoptekst<input id="buttonText"></label>
+    <label>Link<input id="link" placeholder="https://..."></label>
+    <label>Afbeelding URL<input id="image"></label>
+    <label>Video URL<input id="video"></label>
+    <label>Alt-tekst<input id="alt"></label>
+    <label>HTML-code<textarea id="customHtml" rows="6"></textarea></label>
+    <div class="row"><button id="moveUp">↑</button><button id="moveDown">↓</button><button id="duplicate">Kopie</button></div>
+    <button id="delete" class="danger wide">Onderdeel verwijderen</button>
+  </div>
+</aside>
+</div>
+<div id="toast"></div>
+<script src="script.js"></script>
+</body></html>
